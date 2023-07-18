@@ -11,7 +11,7 @@ import (
 // ValidArgsMiddleware validates calculator arguments in request context.
 func ValidArgsMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		args, ok := r.Context().Value("").(*dto.CalculatorArguments)
+		args, ok := r.Context().Value(constants.CalculatorArgsContextKey).(*dto.CalculatorArguments)
 
 		if !ok {
 			w.WriteHeader(http.StatusBadRequest)
