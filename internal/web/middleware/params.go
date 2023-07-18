@@ -7,6 +7,7 @@ import (
 	"net/url"
 	"strconv"
 
+	"github.com/karmek-k/basic-service-go/internal/web/constants"
 	"github.com/karmek-k/basic-service-go/internal/web/dto"
 )
 
@@ -25,7 +26,7 @@ func ArgsFromParamsMiddleware(next http.Handler) http.Handler {
 		}
 
 		// TODO use a key of different type
-		ctx := context.WithValue(r.Context(), "args", args)
+		ctx := context.WithValue(r.Context(), constants.CalculatorArgsContextKey, args)
 
 		next.ServeHTTP(w, r.WithContext(ctx))
 	})

@@ -3,6 +3,7 @@ package middleware
 import (
 	"net/http"
 
+	"github.com/karmek-k/basic-service-go/internal/web/constants"
 	"github.com/karmek-k/basic-service-go/internal/web/dto"
 	"github.com/karmek-k/basic-service-go/pkg/validation"
 )
@@ -18,7 +19,8 @@ func ValidArgsMiddleware(next http.Handler) http.Handler {
 			return
 		}
 	
-		if !(validation.InRange(args.A, -1000, 1000) && validation.InRange(args.B, -1000, 1000)) {
+		if !(validation.InRange(args.A, constants.ArgumentMin, constants.ArgumentMax) && 
+			validation.InRange(args.B, constants.ArgumentMin, constants.ArgumentMax)) {
 			w.WriteHeader(http.StatusUnprocessableEntity)
 			
 			return
