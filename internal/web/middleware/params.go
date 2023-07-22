@@ -25,7 +25,6 @@ func ArgsFromParamsMiddleware(next http.Handler) http.Handler {
 			return
 		}
 
-		// TODO use a key of different type
 		ctx := context.WithValue(r.Context(), constants.CalculatorArgsContextKey, args)
 
 		next.ServeHTTP(w, r.WithContext(ctx))

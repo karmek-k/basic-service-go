@@ -10,10 +10,10 @@ import (
 // CreateCalculatorHandler creates a `http.Handler` with registered calculator routes
 func CreateCalculatorHandler() http.Handler {
 	mux := http.NewServeMux()
-	
-	handler := middleware.ArgsFromParamsMiddleware(mux)
-	// TODO fix; always returns 400
-	// handler = middleware.ValidArgsMiddleware(handler)
+
+	// from last to first
+	handler := middleware.ValidArgsMiddleware(mux)
+	handler = middleware.ArgsFromParamsMiddleware(handler)
 
 	mux.HandleFunc("/add", routes.Add)
 	mux.HandleFunc("/subtract", routes.Subtract)
