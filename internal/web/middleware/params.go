@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"strconv"
 
-	"github.com/karmek-k/basic-service-go/internal/web/constants"
+	"github.com/karmek-k/basic-service-go/internal/constants"
 	"github.com/karmek-k/basic-service-go/internal/web/dto"
 )
 

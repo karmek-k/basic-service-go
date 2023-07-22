@@ -3,9 +3,9 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/karmek-k/basic-service-go/internal/web/constants"
+	"github.com/karmek-k/basic-service-go/internal/constants"
+	"github.com/karmek-k/basic-service-go/internal/validators"
 	"github.com/karmek-k/basic-service-go/internal/web/dto"
-	"github.com/karmek-k/basic-service-go/internal/web/validators"
 )
 
 // ValidArgsMiddleware validates calculator arguments in request context.

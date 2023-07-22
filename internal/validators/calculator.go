@@ -1,7 +1,7 @@
 package validators
 
 import (
-	"github.com/karmek-k/basic-service-go/internal/web/constants"
+	"github.com/karmek-k/basic-service-go/internal/constants"
 	"github.com/karmek-k/basic-service-go/internal/web/dto"
 	"github.com/karmek-k/basic-service-go/pkg/validation"
 )
